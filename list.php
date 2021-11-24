@@ -56,7 +56,7 @@ try{
     */
 
 try{
-    $sql = "SELECT * FROM user WHERE name like :name LIMIT :page , :start /*[SQL文に追加]*/";
+    $sql = "SELECT * FROM user WHERE name like :name LIMIT :start , :page /*[SQL文に追加]*/";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':name', '%'.$name.'%', PDO::PARAM_STR);
     $stmt->bindValue(':start', $start, PDO::PARAM_INT);
